@@ -1,0 +1,28 @@
+select a.Id,Name,phone,grade,kor,eng from person a inner join student b on a.id=b.id where kor>50;
+
+
+select * from person a inner join student b on a.id=b.id ;
+select * from person a inner join student b on a.id=b.id;
+update person set phone=N'00000' where name=N'lg';
+update person set phone=N'12345' where name=N'LG' 
+
+UPDATE PERSON SET PHONE=N'123456' WHERE NAME LIKE N'길%'
+insert into person values(8,N'MICROSOFT',N'999')
+
+UPDATE PERSON SET ID=9 WHERE PHONE=N'999'
+
+CREATE TABLE TEST01(
+
+ CODE INT NOT NULL,
+NAME NVARCHAR(30) NULL,
+MODEL NVARCHAR(50) NULL
+)
+
+INSERT INTO TEST01 VALUES(0001,N'PC',N'i3')
+INSERT INTO TEST01 VALUES(0002,'PC','i7')
+SELECT * FROM TEST01
+
+
+
+
+
