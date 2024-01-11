@@ -24,19 +24,52 @@ namespace winFormTest_Graphic
         {
             InitializeComponent();
             g = canvas.CreateGraphics();
-            pen = new Pen(Color.Red, 1.0f);
+            pen = new Pen(Color.Red, 1.0f);//1.0f는 선두께 
             //brush = new Brush(Color.Green);  brush는 인터페이스여서 인스턴스화 할 수 없다고 함 
         
         }
 
         private void canvas_MouseDown(object sender, MouseEventArgs e)
         {
-
+            dFlag = 1;//눌렸을 때  
+            //p1.X = e.X; p1.Y = e.Y; 
+            p1 = e.Location;
         }
 
         private void canvas_MouseUp(object sender, MouseEventArgs e)
         {
+            dFlag = 0;//안눌렸을 때  
+        }
 
+        private void canvas_MouseMove(object sender, MouseEventArgs e)
+        {
+            string str = $"{e.X} x {e.Y}";
+            sblabel1.Text = str;
+
+            if (dFlag == 0) return; 
+            switch (dMode) {
+                case 0:
+                    
+                    break;
+                case 1: //pen draw
+                    g.DrawLine(pen, p1, e.Location);
+                    p1 = e.Location;
+                    break;
+
+                case 2://line draw
+                    
+
+                    
+                case 3://rect draw
+                    
+
+                    
+                case 4://circle draw
+                    
+
+                    
+                default: break;
+            }
         }
 
         private void menuShape_Click(object sender, EventArgs e)
@@ -74,11 +107,7 @@ namespace winFormTest_Graphic
             sblabel4.Text = "모두지우기 ";
         }
 
-        private void canvas_MouseMove(object sender, MouseEventArgs e)
-        {
-            string str = $"{e.X} x {e.Y}";
-            sblabel1.Text = str ;   
-        }
+
 
         private void canvas_Paint(object sender, PaintEventArgs e)
         {
