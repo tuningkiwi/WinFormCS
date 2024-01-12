@@ -45,6 +45,8 @@
             this.menuErase = new System.Windows.Forms.ToolStripMenuItem();
             this.보기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuColor = new System.Windows.Forms.ToolStripMenuItem();
+            this.동작테스트ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuTestSine = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.sblabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.sblabel2 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -53,15 +55,9 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.canvas = new System.Windows.Forms.PictureBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.canvas)).BeginInit();
-            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -69,7 +65,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.파일ToolStripMenuItem,
             this.홈ToolStripMenuItem,
-            this.보기ToolStripMenuItem});
+            this.보기ToolStripMenuItem,
+            this.동작테스트ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1904, 24);
@@ -97,8 +94,9 @@
             // menuOpen
             // 
             this.menuOpen.Name = "menuOpen";
-            this.menuOpen.Size = new System.Drawing.Size(138, 22);
+            this.menuOpen.Size = new System.Drawing.Size(180, 22);
             this.menuOpen.Text = "열기";
+            this.menuOpen.Click += new System.EventHandler(this.menuOpen_Click);
             // 
             // menuSave
             // 
@@ -192,6 +190,21 @@
             this.menuColor.Size = new System.Drawing.Size(98, 22);
             this.menuColor.Text = "색상";
             // 
+            // 동작테스트ToolStripMenuItem
+            // 
+            this.동작테스트ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuTestSine});
+            this.동작테스트ToolStripMenuItem.Name = "동작테스트ToolStripMenuItem";
+            this.동작테스트ToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.동작테스트ToolStripMenuItem.Text = "동작테스트";
+            // 
+            // menuTestSine
+            // 
+            this.menuTestSine.Name = "menuTestSine";
+            this.menuTestSine.Size = new System.Drawing.Size(127, 22);
+            this.menuTestSine.Text = "Sin Graph";
+            this.menuTestSine.Click += new System.EventHandler(this.menuTestSine_Click);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -252,64 +265,11 @@
             this.canvas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseMove);
             this.canvas.MouseUp += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseUp);
             // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(800, 484);
-            this.tabControl1.TabIndex = 4;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(792, 458);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(792, 458);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(792, 458);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(792, 458);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "tabPage4";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
             // frmPaint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
-            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.canvas);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -323,7 +283,6 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.canvas)).EndInit();
-            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -356,11 +315,8 @@
         private System.Windows.Forms.ToolStripStatusLabel sblabel3;
         private System.Windows.Forms.ToolStripStatusLabel sblabel4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.ToolStripMenuItem 동작테스트ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuTestSine;
     }
 }
 

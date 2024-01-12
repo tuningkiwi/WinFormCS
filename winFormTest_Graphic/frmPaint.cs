@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -127,6 +129,107 @@ namespace winFormTest_Graphic
             if (this.WindowState == FormWindowState.Maximized) { 
                 frmPaint_ResizeEnd(sender, e);
             }
+        }
+
+        //private void sinGraphToolStripMenuItem_Click(object sender, EventArgs e)
+        private void menuTestSine_Click(object sender, EventArgs e)
+        {
+            //g.Clear(DefaultBackColor);
+            //canvas.Invalidate();
+            menuErase_Click(sender, e);
+            List<double> data = new List<double>();
+            for (int i = 0; i < 360; i++) {
+                //PI = 3.141592Math.PI
+                data.Add(Math.Sin(3.141592/180*i));
+            }
+
+            int left=0, top=0, right=canvas.Width, bottom= canvas.Height;
+            int range = right - left - 40;
+            int step = range / 360;
+            int amp = (bottom - 20)/2 ;
+            int xOffset = 20;
+            int yOffset = bottom / 2;
+            
+            g.DrawLine(pen, new Point(left+20, bottom/2),new Point(right-20, bottom/2));
+            g.DrawLine(pen, new Point(left+20,10),new Point(left+20, bottom-10));
+            PointF p1, p2;
+            p1 = new PointF(xOffset, yOffset);  //최초의 시작 위치 
+
+            for (int i = 0; i < 360; i++) {
+                p2 = new PointF(i * step+xOffset, ((float)(data[i]*amp+yOffset)));
+                data.Add(Math.Sin(i));
+                g.DrawLine(pen,p1, p2); 
+                p1 = p2;
+            }
+            canvas.Invalidate();
+        }
+
+        private void menuOpen_Click(object sender, EventArgs e)
+        {
+            //openFileDialog1.Filter = "MS-SQL Database file|*.mdf";
+            if (DialogResult.OK == openFileDialog1.ShowDialog())
+            {
+               
+                string fn = openFileDialog1.FileName;
+                FileStream fs = new FileStream(fn, FileMode.Open);
+                StreamReader sr = new StreamReader(fs, Encoding.UTF8);
+                //string data = sr.ReadToEnd();
+
+                string dayData = "";
+                int price = 0;
+                List<double> data = new List<double>();
+
+
+                while (!sr.EndOfStream)
+                {
+                    string line = sr.ReadLine();
+                    Console.WriteLine(line);
+                    
+
+                    if (line != null)
+                    {
+                        string[] subs = line.Split(',');
+                        //dayData = subs[1];
+                        dayData = subs[1].Substring(1, subs[1].Length-2);
+                        Console.WriteLine(dayData);
+                        price = int.Parse(dayData);
+                        //price = Convert.ToInt32(dayData);
+                        Console.WriteLine(price);
+
+                        menuErase_Click(sender, e);
+                        data.Add(price);
+
+                    }
+
+                    int left = 0, top = 0, right = canvas.Width, bottom = canvas.Height;
+                    int range = right - left - 40;
+                    int step = range / 1600;
+                    int amp = (bottom - 20) / 2;
+                    int xOffset = 20;
+                    int yOffset = bottom / 2;
+
+                    g.DrawLine(pen, new Point(left + 20, bottom / 2), new Point(right - 20, bottom / 2));
+                    g.DrawLine(pen, new Point(left + 20, 10), new Point(left + 20, bottom - 10));
+                    PointF p1, p2;
+                    p1 = new PointF(xOffset, yOffset);  //최초의 시작 위치 
+
+                    for (int i = 0; i < 1600; i++)
+                    {
+                        p2 = new PointF(i * step + xOffset, ((float)(data[i] * amp + yOffset)));
+                        //data.Add(Math.Sin(i));
+                        g.DrawLine(pen, p1, p2);
+                        p1 = p2;
+                    }
+                    canvas.Invalidate();
+
+                }
+
+
+                sr.Close();
+                fs.Close();
+
+
+               }
         }
 
         private void menuText_Click(object sender, EventArgs e)
