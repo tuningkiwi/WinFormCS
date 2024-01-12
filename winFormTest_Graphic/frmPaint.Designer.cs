@@ -53,9 +53,15 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.canvas = new System.Windows.Forms.PictureBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.canvas)).BeginInit();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -66,7 +72,7 @@
             this.보기ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1904, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -128,35 +134,35 @@
             // menuShape
             // 
             this.menuShape.Name = "menuShape";
-            this.menuShape.Size = new System.Drawing.Size(180, 22);
+            this.menuShape.Size = new System.Drawing.Size(150, 22);
             this.menuShape.Text = "연필그리기";
             this.menuShape.Click += new System.EventHandler(this.menuShape_Click);
             // 
             // menuLine
             // 
             this.menuLine.Name = "menuLine";
-            this.menuLine.Size = new System.Drawing.Size(180, 22);
+            this.menuLine.Size = new System.Drawing.Size(150, 22);
             this.menuLine.Text = "선그리기";
             this.menuLine.Click += new System.EventHandler(this.menuLine_Click);
             // 
             // menuRect
             // 
             this.menuRect.Name = "menuRect";
-            this.menuRect.Size = new System.Drawing.Size(180, 22);
+            this.menuRect.Size = new System.Drawing.Size(150, 22);
             this.menuRect.Text = "사각형 그리기";
             this.menuRect.Click += new System.EventHandler(this.menuRect_Click);
             // 
             // menuCircle
             // 
             this.menuCircle.Name = "menuCircle";
-            this.menuCircle.Size = new System.Drawing.Size(180, 22);
+            this.menuCircle.Size = new System.Drawing.Size(150, 22);
             this.menuCircle.Text = "원그리기";
             this.menuCircle.Click += new System.EventHandler(this.menuCircle_Click);
             // 
             // menuText
             // 
             this.menuText.Name = "menuText";
-            this.menuText.Size = new System.Drawing.Size(180, 22);
+            this.menuText.Size = new System.Drawing.Size(150, 22);
             this.menuText.Text = "문자 입력";
             this.menuText.Click += new System.EventHandler(this.menuText_Click);
             // 
@@ -168,7 +174,7 @@
             // menuErase
             // 
             this.menuErase.Name = "menuErase";
-            this.menuErase.Size = new System.Drawing.Size(180, 22);
+            this.menuErase.Size = new System.Drawing.Size(150, 22);
             this.menuErase.Text = "모두지우기";
             this.menuErase.Click += new System.EventHandler(this.menuErase_Click);
             // 
@@ -193,9 +199,9 @@
             this.sblabel2,
             this.sblabel3,
             this.sblabel4});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 428);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 1019);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(800, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1904, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -239,29 +245,85 @@
             this.canvas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.canvas.Location = new System.Drawing.Point(0, 24);
             this.canvas.Name = "canvas";
-            this.canvas.Size = new System.Drawing.Size(800, 404);
+            this.canvas.Size = new System.Drawing.Size(1904, 995);
             this.canvas.TabIndex = 3;
             this.canvas.TabStop = false;
             this.canvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseDown);
             this.canvas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseMove);
             this.canvas.MouseUp += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseUp);
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(800, 484);
+            this.tabControl1.TabIndex = 4;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(792, 458);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(792, 458);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(792, 458);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(792, 458);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
             // frmPaint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.canvas);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPaint";
             this.Text = "Form1";
+            this.ResizeEnd += new System.EventHandler(this.frmPaint_ResizeEnd);
+            this.Resize += new System.EventHandler(this.frmPaint_Resize);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.canvas)).EndInit();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,6 +356,11 @@
         private System.Windows.Forms.ToolStripStatusLabel sblabel3;
         private System.Windows.Forms.ToolStripStatusLabel sblabel4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage4;
     }
 }
 
