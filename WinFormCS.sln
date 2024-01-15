@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp2", "Windows
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "winFormTest_Graphic", "winFormTest_Graphic\winFormTest_Graphic.csproj", "{2D16EBE1-C09C-4730-8C9C-62020641F804}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "terminal", "terminal\terminal.csproj", "{B1F19986-A87D-4109-AE8F-F050DA59A177}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{2D16EBE1-C09C-4730-8C9C-62020641F804}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D16EBE1-C09C-4730-8C9C-62020641F804}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D16EBE1-C09C-4730-8C9C-62020641F804}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1F19986-A87D-4109-AE8F-F050DA59A177}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1F19986-A87D-4109-AE8F-F050DA59A177}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1F19986-A87D-4109-AE8F-F050DA59A177}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1F19986-A87D-4109-AE8F-F050DA59A177}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
